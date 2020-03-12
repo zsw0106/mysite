@@ -1,7 +1,7 @@
 appdirs==1.4.3
 asgiref==3.2.3
 distlib==0.3.0
-Django==2.0
+Django==2.2.10
 django-ckeditor==5.9.0
 django-js-asset==1.2.2
 filelock==3.0.12
