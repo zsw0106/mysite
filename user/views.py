@@ -45,8 +45,7 @@ def register(request):
             #创建用户
             user = User.objects.create_user(username,email,password)
             user.save()
-            #清除session
-            del request.session['request_code']
+            
             #登录用户
             user = auth.authenticate(username=username,password=password)
             auth.login(request,user)
