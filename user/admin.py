@@ -9,18 +9,17 @@ class ProfileInline(admin.StackedInline):
     can_delete = False
 
 class UserAdmin(BaseUserAdmin):
-    inlines = (ProfileInline,)
-    list_display = ('username','nickname','email','is_staff','is_active','is_superuser')
+    inlines = (ProfileInline, )
+    list_display = ('username', 'nickname', 'email', 'is_staff', 'is_active', 'is_superuser')
 
-    def nickname(self,obj):
+    def nickname(self, obj):
         return obj.profile.nickname
     nickname.short_description = '昵称'
 
-#re
+# Re-register UserAdmin
 admin.site.unregister(User)
-admin.site.register(User,UserAdmin)
-
+admin.site.register(User, UserAdmin)
 
 @admin.register(Profile)
-class Profile(admin.ModelAdmin):
-    list_display = ('user','nickname')
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'nickname')

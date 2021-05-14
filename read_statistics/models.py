@@ -11,7 +11,7 @@ class ReadNum(models.Model):
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
 
-class ReadNumExpandMethon():
+class ReadNumExpandMethod():
     def get_read_num(self):
         try:
             ct = ContentType.objects.get_for_model(self)
@@ -27,3 +27,4 @@ class ReadDetail(models.Model):
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
+    
