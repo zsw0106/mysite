@@ -18,7 +18,8 @@ class BBS(models.Model, ReadNumExpandMethod):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     read_details = GenericRelation(ReadDetail)
     created_time = models.DateTimeField(auto_now_add=True)
-    last_updated_time = models.DateTimeField(auto_now=True)    
+    last_updated_time = models.DateTimeField(auto_now=True)
+    is_delete = models.SmallIntegerField(default=0, verbose_name='帖子状态')
 
     def get_url(self):
         return reverse('bbs_detail', kwargs={'bbs_pk': self.pk})

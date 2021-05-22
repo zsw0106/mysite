@@ -9,4 +9,6 @@ urlpatterns = [
     path('add', views.add_bbs, name="add_bbs"),
     path('type/<int:bbs_type_pk>', views.bbss_with_type, name="bbss_with_type"),
     path('date/<int:year>/<int:month>', views.bbss_with_date, name="bbss_with_date"),
+    path('bbs_delete/<int:id>/', views.bbs_delete, name='bbs_delete'),
+    path('bbs_update/<int:id>/', views.bbs_update, name='bbs_update'),
 ]
